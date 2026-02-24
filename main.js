@@ -19,14 +19,18 @@ import { initSwipe } from './swipe.js';
 import { iniciarNavegacao } from './navegacao.js';
 import { alternarCheck, alternarTodos } from './eventos.js';
 
-const VERSAO_ATUAL = "v6.1.1";
+const VERSAO_ATUAL = "v6.2.0";
 
 const releaseNotes = {
+    "v6.2.0": `✨ **StockFlow Pro v6.2.0**
+
+- Nova aba "Adicionar" para separar o formulário de inclusão de produtos.
+- Botão "Ocultar" renomeado para "Apagar" para maior clareza.
+- Melhorias na experiência de fixar itens na lista padrão.`,
     "v6.1.1": `✨ **StockFlow Pro v6.1.1**
 
-- Correção: microfone agora é ativado corretamente no duplo toque da lupa.
-- Correção: lista de compras agora é atualizada ao marcar/desmarcar itens.
-- Ajustes no temporizador do double tap para maior confiabilidade.`,
+- Correção: microfone no duplo toque da lupa.
+- Correção: lista de compras atualizada ao marcar/desmarcar itens.`,
     "v6.1.0": `✨ **StockFlow Pro v6.1.0**
 
 - Alternância entre calculadora e teclado nativo nos campos de quantidade.
@@ -157,7 +161,7 @@ function adicionarManual(salvarNoPadrao) {
     dados.push({ n: p, q: q, u: u, c: false, min: null, max: null });
     renderizarListaCompleta(dados);
     salvarDados(dados);
-    atualizarPainelCompras(); // <-- Atualiza a lista de compras
+    atualizarPainelCompras();
 
     if (salvarNoPadrao) {
         var favoritosUsuario = carregarMeus();
@@ -191,7 +195,7 @@ function removerDoPadrao() {
     });
     const dados = coletarDadosDaTabela();
     salvarDados(dados);
-    atualizarPainelCompras(); // <-- Atualiza a lista de compras
+    atualizarPainelCompras();
     atualizarDropdown();
     document.getElementById("novoProduto").value = "";
     document.getElementById("novoQtd").value = "";
@@ -605,7 +609,7 @@ function configurarEventListeners() {
         if (e.target.classList.contains('select-tabela')) {
             const dados = coletarDadosDaTabela();
             salvarDados(dados);
-            atualizarPainelCompras(); // <-- Atualiza a lista de compras (opcional, mas seguro)
+            atualizarPainelCompras();
         }
     });
 
@@ -688,7 +692,7 @@ function iniciarApp() {
         carregarListaPadrao();
     }
     atualizarDropdown();
-    atualizarPainelCompras(); // <-- Garante que a lista de compras seja exibida corretamente no início
+    atualizarPainelCompras();
     initSwipe();
     verificarAlertas();
     mostrarDicaSwipe();
