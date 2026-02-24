@@ -8,49 +8,70 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 ## [6.2.0] - 2025-04-08
 
 ### Adicionado
-- **Nova aba "Adicionar"**: Agora o formulário de adição de produtos (com campos "Produto", "Qtd", "Unid" e botões "Adicionar", "Fixar", "Ocultar") foi movido para uma aba separada, ao lado de "Estoque" e "Compras". Isso torna a interface mais organizada e limpa.
+- **Nova aba "Adicionar"**: O formulário de adição de produtos foi movido para uma aba separada, ao lado de "Estoque" e "Compras", deixando a interface mais limpa.
 - **Ícone ➕** na nova aba para indicar a ação de adicionar.
 
 ### Alterado
-- A seção "Estoque" agora contém apenas a lista de itens e os botões de ações globais (compartilhar, novo dia, exportar, etc.), sem o formulário de adição.
+- **Botão "Ocultar" renomeado para "Apagar"** no formulário de adição, com tooltip "Remover item da lista padrão".
 - Versão do projeto atualizada para **v6.2.0**.
+
+### Corrigido
+- Garantido que itens fixados com o botão "Fixar" permaneçam na lista após "Novo Dia".
+- O botão "Apagar" agora remove permanentemente o item da lista padrão (não apenas o oculta).
 
 ---
 
 ## [6.1.1] - 2025-04-08
 
 ### Corrigido
-- Microfone no duplo toque da lupa.
-- Lista de compras atualizada imediatamente ao marcar/desmarcar itens.
+- **Microfone no duplo toque da lupa**: Agora o microfone é ativado corretamente ao dar duplo toque na lupa. Ajustes no temporizador garantem que o overlay de busca abra antes da ativação do microfone.
+- **Lista de compras**: Agora a lista de compras é atualizada imediatamente ao marcar/desmarcar itens, ao adicionar ou remover produtos, e ao editar via swipe.
 
 ---
 
 ## [6.1.0] - 2025-04-08
 
 ### Adicionado
-- Alternância entre calculadora e teclado nativo.
-- Ícone de retorno à calculadora.
-- Parser de frações.
+- Alternância entre calculadora e teclado nativo nos campos de quantidade.
+- Ícone de retorno à calculadora (🧮) dentro do campo quando em modo teclado.
+- Parser avançado de frações (ex: `1/2`, `2 1/3` → decimal).
 
 ---
 
 ## [6.0.0] - 2025-04-08
 
 ### Adicionado
-- Navegação por abas.
-- Sistema de novidades automáticas.
-- Versão dinâmica no título.
+- Navegação por abas: Estoque e Compras.
+- Interface reorganizada seguindo novo design.
+- Sistema de novidades automáticas ao atualizar (modal "O que há de novo").
+- Versão dinâmica exibida no título.
+
+### Alterado
+- Nome do projeto restaurado para StockFlow Pro.
 
 ---
 
 ## [5.3.1] - 2025-04-08
 
 ### Adicionado
-- Dica de swipe, tooltips, acessibilidade.
+- Dica de swipe na primeira execução.
+- Tooltips nos botões Fixar e Ocultar.
+- Acessibilidade nos botões de swipe.
+
+### Alterado
+- Renomeação do botão "Padrão" para "Ocultar".
 
 ---
 
 ## [5.3.0] - 2025-03-15
 
 ### Versão inicial
-- Lista categorizada, swipe, calculadora, voz, tema, exportação, compras, lupa.
+- Lista categorizada automaticamente.
+- Swipe para apagar/configurar alertas.
+- Calculadora integrada.
+- Reconhecimento de voz.
+- Tema claro/escuro.
+- Exportação/importação JSON.
+- Lista de compras baseada em itens marcados.
+- Compartilhamento WhatsApp e cópia.
+- Lupa flutuante com busca e duplo toque para microfone.
